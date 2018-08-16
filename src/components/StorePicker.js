@@ -2,16 +2,24 @@ import React from "react";
 import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
-	goToStore(event) {
+	storeNameInput = React.createRef();
+	
+	goToStore = event => {
 		event.preventDefault();
-		alert("went to store");
+		console.log(this.storeNameInput.value.value);
 	}
 
 	render() {
 		return (
 			<form className="store-selector" onSubmit={this.goToStore}>
 				<h2>Please enter a store</h2>
-				<input type="text" required placeholder="Store Name" defaultValue={getFunName()} />
+				<input
+					type="text"
+					ref={this.storeNameInput}
+					required
+					placeholder="Store Name"
+					defaultValue={getFunName()}
+				/>
 				<button type="submit">Visit Store</button>
 			</form>
 		)
