@@ -10,13 +10,14 @@ class AddFishForm extends React.Component {
 	createFish = event => {
 		event.preventDefault();
 		const fish = {
-			name: this.nameRef.value.value,
-			price: parseFloat(this.priceRef.value.value),
-			status: this.statusRef.value.value,
-			desc: this.descRef.value.value,
-			image: this.imageRef.value.value,
+			name: this.nameRef.current.value,
+			price: parseFloat(this.priceRef.current.value),
+			status: this.statusRef.current.value,
+			desc: this.descRef.current.value,
+			image: this.imageRef.current.value,
 		}
-		console.log(fish);
+		this.props.addFish(fish);
+		event.currentTarget.reset();
 	}
 
 	render() {
@@ -32,10 +33,8 @@ class AddFishForm extends React.Component {
 				<input name="image" ref={this.imageRef} placeholder="Image" type="text" />
 				<button type="submit">+ Add Fish</button>
 			</form>
-		)
+		);
 	}
-
-
 }
 
 export default AddFishForm;

@@ -15,7 +15,7 @@ class Header extends React.Component {
 					<span>{this.props.tagline}</span>
 				</h3>
 			</header>
-		)
+		);
 	}
 }
 

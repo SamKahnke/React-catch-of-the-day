@@ -8,7 +8,6 @@ class StorePicker extends React.Component {
 		event.preventDefault();
 		const storeName = this.storeNameInput.current.value;
 		this.props.history.push(`/store/${storeName}`);
-		console.log(this.storeNameInput.value);
 	}
 
 	render() {
@@ -24,7 +23,7 @@ class StorePicker extends React.Component {
 				/>
 				<button type="submit">Visit Store</button>
 			</form>
-		)
+		);
 	}
 }
 
